@@ -8,16 +8,16 @@ $(function () {
     // validator files are included in the download package
     // otherwise download from http://1000hz.github.io/bootstrap-validator
 
-    $('#contact-form').validator();
+    $('#contact-form1').validator();
 
 
     // when the form is submitted
-    $('#contact-form').on('submit', function (e) {
+    $('#contact-form1').on('submit', function (e) {
 
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
             var url = "http://sdfgdfg.esy.es/rznak-form.php";
-            
+
 
             // POST values in the background the the script URL
             $.ajax({
@@ -26,6 +26,7 @@ $(function () {
                 data: $(this).serialize(),
                 success: function (data)
                 {
+                    console.log()
                     // data = JSON object that contact.php returns
 
                     // we recieve the type of the message: success x danger and apply it to the 
