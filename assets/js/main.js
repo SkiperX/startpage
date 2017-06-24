@@ -128,7 +128,7 @@ NOTE: This is the custom jQuery file for the template
             $(function() {
                 element.typed({
                     strings: ["Привет!", "Я фронтенд-разработчик.", "Фрилансер."],
-                    typeSpeed: 100,
+                    typeSpeed: 90,
                     loop: true,
                 });
             });
