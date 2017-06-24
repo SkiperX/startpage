@@ -8,11 +8,11 @@ $(function () {
     // validator files are included in the download package
     // otherwise download from http://1000hz.github.io/bootstrap-validator
 
-    $('#contact-form1').validator();
+    $('#contact-form').validator();
 
 
     // when the form is submitted
-    $('#contact-form1').on('submit', function (e) {
+    $('#contact-form').on('submit', function (e) {
 
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
