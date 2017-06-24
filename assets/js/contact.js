@@ -16,7 +16,7 @@ $(function () {
 
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
-            var url = "http://sdfgdfg.esy.es/rznak-form.php";
+            var url = "http://sdfgdfg.esy.es/rznak/rznak-form.php";
 
 
             // POST values in the background the the script URL
@@ -26,7 +26,7 @@ $(function () {
                 data: $(this).serialize(),
                 success: function (data)
                 {
-                    console.log()
+                    console.log(data);
                     // data = JSON object that contact.php returns
 
                     // we recieve the type of the message: success x danger and apply it to the 
