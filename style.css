@@ -769,7 +769,7 @@ ul.work-list li.theme-color.active{
     margin: 0;
 }
 .section-padding{
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 
@@ -897,6 +897,7 @@ ul.work-list li.theme-color.active{
 .welcome-text{
     font-size: 65px;
     color: #fff;
+    line-height: 1;
 }
 .typed-cursor, .element {
   display: inline;
