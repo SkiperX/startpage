@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=cyrillic" rel="stylesheet">
+<style>
+    body {
+        text-align: center;
+        margin: 5% 10%;
+        font-family: 'Pacifico', cursive;
+        background-color: #333;
+        background-image: url('../assets/img/love.jpeg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color: #eee;
+    }
+    #time {
+        background-color: #333;
+        background-color: rgba(30, 30, 43, 0.7);
+        padding: 5em;
+        -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+    }
+    #time-days {
+        font-size: 80px;
+        margin-bottom: 20px;
+
+    }
+    #time-time {
+        font-size: 70px;
+
+    }
+</style>
+<div id="time">
+    <div id="time-days"></div>
+    <div id="time-time"></div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    //Code from "http://stackoverflow.com/questions/26049855/javascript-time-counter-since-start-date-and-time"
+
+    var startDateTime = new Date(2017,10,20,19,32,0);
+    // YYYY (M-1) D H m s (start time and date)
+
+    var startStamp = startDateTime.getTime();
+
+    var newDate = new Date();
+    var newStamp = newDate.getTime();
+
+    var timer;
+
+    function updateClock() {
+        newDate = new Date();
+        newStamp = newDate.getTime();
+        var diff = Math.round((newStamp-startStamp)/1000);
+
+        var d = Math.floor(diff/(24*60*60));
+        diff = diff-(d*24*60*60);
+        var h = Math.floor(diff/(60*60));
+        diff = diff-(h*60*60);
+        var m = Math.floor(diff/(60));
+        diff = diff-(m*60);
+        var s = diff;
+
+        document.getElementById("time-days").innerHTML = d + " дней";
+        if (s < 10) {
+            s = "0" + s;
+        }
+        if (m < 10) {
+            m = "0" + m;
+        }
+        if (h < 10) {
+            h = "0" + h;
+        }
+        document.getElementById("time-time").innerHTML = h + ":"+ m + ":" + s;
+    }
+
+    setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
